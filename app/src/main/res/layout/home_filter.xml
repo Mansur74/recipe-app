@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/filter_bottom_sheet"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_bottomsheet_background"
+    android:paddingTop="20dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight = "280dp">
+
+    <RelativeLayout
+        android:layout_width="125dp"
+        android:layout_height="3dp"
+        android:background="@drawable/filter_stick_bg"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp">
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:drawablePadding="10dp"
+            android:text="Filter"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="English"
+            android:textColor="@color/orange"
+            android:layout_alignParentEnd="true">
+
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Meal"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:textSize="17dp">
+
+    </TextView>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="1"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_columnWeight="1"
+            android:background="@drawable/products_bg"
+            android:textColor="@color/gray"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:id="@+id/breakfast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:drawablePadding="10dp"
+                android:text="Breakfast"
+                android:gravity="center"
+                android:clickable="true"
+                android:textColor="@color/gray"
+                android:textSize="17dp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_columnWeight="1"
+            android:textColor="@color/gray"
+            android:background="@drawable/products_bg">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:drawablePadding="10dp"
+                android:text="Brunch"
+                android:gravity="center"
+                android:clickable="true"
+                android:textColor="@color/gray"
+                android:textSize="17dp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_columnWeight="1"
+            android:textColor="@color/gray"
+            android:background="@drawable/products_bg"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:drawablePadding="10dp"
+                android:text="Lunch"
+                android:layout_alignParentStart="true"
+                android:clickable="true"
+                android:textColor="@color/gray"
+                android:textSize="17dp"
+                android:gravity="center">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_columnWeight="1"
+            android:text="Brunch"
+            android:textColor="@color/gray"
+            android:background="@drawable/products_bg"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:drawablePadding="10dp"
+                android:text="Meal"
+                android:clickable="true"
+                android:textColor="@color/gray"
+                android:layout_alignParentStart="true"
+                android:textSize="17dp"
+                android:gravity="center">
+
+            </TextView>
+
+        </RelativeLayout>
+
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/open_gray">
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Meal"
+        android:textColor="@color/white"
+        android:layout_alignParentStart="true"
+        android:textSize="17dp">
+
+    </TextView>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="1"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_columnWeight="1"
+            android:background="@drawable/products_bg"
+            android:textColor="@color/gray"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:drawablePadding="10dp"
+                android:text="Breakfast"
+                android:gravity="center"
+                android:clickable="true"
+                android:textColor="@color/gray"
+                android:textSize="17dp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_columnWeight="1"
+            android:textColor="@color/gray"
+            android:background="@drawable/products_bg">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:drawablePadding="10dp"
+                android:text="Brunch"
+                android:gravity="center"
+                android:clickable="true"
+                android:textColor="@color/gray"
+                android:textSize="17dp">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_columnWeight="1"
+            android:textColor="@color/gray"
+            android:background="@drawable/products_bg"
+            android:layout_marginLeft="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:drawablePadding="10dp"
+                android:text="Lunch"
+                android:layout_alignParentStart="true"
+                android:clickable="true"
+                android:textColor="@color/gray"
+                android:textSize="17dp"
+                android:gravity="center">
+
+            </TextView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_columnWeight="1"
+            android:text="Brunch"
+            android:textColor="@color/gray"
+            android:background="@drawable/products_bg"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:text="Meal"
+                android:clickable="true"
+                android:textColor="@color/gray"
+                android:layout_alignParentStart="true"
+                android:textSize="17dp"
+                android:gravity="center">
+
+            </TextView>
+
+        </RelativeLayout>
+
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/open_gray"
+        android:layout_marginBottom="20dp">
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Serving"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:textSize="17dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Set Manuelly"
+            android:textColor="@color/orange"
+            android:layout_alignParentEnd="true"
+            android:textSize="17dp">
+
+
+        </TextView>
+        <com.google.android.material.slider.RangeSlider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="5"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:values="@array/ServingRangeSlider"
+            android:layout_marginTop="20dp"
+            >
+
+        </com.google.android.material.slider.RangeSlider>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Preparation Time"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:textSize="17dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Set Manuelly"
+            android:textColor="@color/orange"
+            android:layout_alignParentEnd="true"
+            android:textSize="17dp">
+
+
+        </TextView>
+        <com.google.android.material.slider.RangeSlider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="5"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:values="@array/ServingRangeSlider"
+            android:layout_marginTop="20dp"
+            >
+
+        </com.google.android.material.slider.RangeSlider>
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Calories"
+            android:textColor="@color/white"
+            android:layout_alignParentStart="true"
+            android:textSize="17dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Set Manuelly"
+            android:textColor="@color/orange"
+            android:layout_alignParentEnd="true"
+            android:textSize="17dp">
+
+
+        </TextView>
+        <com.google.android.material.slider.RangeSlider
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stepSize="5"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:values="@array/ServingRangeSlider"
+            android:layout_marginTop="20dp"
+            >
+
+        </com.google.android.material.slider.RangeSlider>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>

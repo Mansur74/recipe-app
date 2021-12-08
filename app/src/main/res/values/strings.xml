@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Recipe App</string>
+    <string-array name="ServingRangeSlider">
+        <item>20</item>
+        <item>80</item>
+    </string-array>
+</resources>

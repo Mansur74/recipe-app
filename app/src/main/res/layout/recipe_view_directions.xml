@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/directions_bottom_sheet"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_bottomsheet_background"
+    android:paddingTop="20dp"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight = "45dp">
+
+    <RelativeLayout
+        android:layout_width="125dp"
+        android:layout_height="3dp"
+        android:background="@drawable/filter_stick_bg"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="20dp">
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Directions"
+        android:textSize="20dp">
+
+
+    </TextView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_direction_mark"
+            android:layout_alignParentLeft="true">
+        </ImageView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawablePadding="20dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+        </TextView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_direction_mark"
+            android:layout_alignParentLeft="true">
+        </ImageView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawablePadding="20dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+        </TextView>
+    </RelativeLayout>
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp">
+
+    <ImageView
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_direction_mark"
+        android:layout_alignParentLeft="true">
+    </ImageView>
+
+    <TextView
+        android:layout_alignParentRight="true"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:drawablePadding="20dp"
+        android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+    </TextView>
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_direction_mark"
+            android:layout_alignParentLeft="true">
+        </ImageView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawablePadding="20dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+        </TextView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_direction_mark"
+            android:layout_alignParentLeft="true">
+        </ImageView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawablePadding="20dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+        </TextView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_direction_mark"
+            android:layout_alignParentLeft="true">
+        </ImageView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawablePadding="20dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+        </TextView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_direction_mark"
+            android:layout_alignParentLeft="true">
+        </ImageView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawablePadding="20dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+        </TextView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_direction_mark"
+            android:layout_alignParentLeft="true">
+        </ImageView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawablePadding="20dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+        </TextView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_direction_mark"
+            android:layout_alignParentLeft="true">
+        </ImageView>
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:drawablePadding="20dp"
+            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.">
+
+
+        </TextView>
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>
+

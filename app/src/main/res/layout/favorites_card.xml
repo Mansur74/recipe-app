@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/rounded_searchbox"
+    android:orientation="horizontal"
+    android:id="@+id/favorites_card">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/favorite_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/favorite_food"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="5dp">
+
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/favorite_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Breakfast"
+                android:layout_centerHorizontal="true"
+                android:textSize="10dp"
+                android:textColor="@color/turquoise">
+            </TextView>
+
+            <TextView
+                android:id="@+id/favorite_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blueburry Muffins"
+                android:layout_centerHorizontal="true"
+                android:textColor="@color/white">
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RatingBar
+                    android:id="@+id/favorite_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.Widget.AppCompat.RatingBar.Small"
+                    android:rating="3.5"
+                    android:layout_marginRight="10dp"
+                    android:theme="@style/RatingBar"
+                    android:numStars="5"
+                    android:stepSize="1">
+
+                </RatingBar>
+
+                <TextView
+                    android:id="@+id/favorite_calory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="120 Calories"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="10dp"
+                    android:textColor="@color/colorPrimary">
+                </TextView>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="@color/gray"
+                    android:text="10 mins"
+                    android:drawableLeft="@drawable/ic_time"
+                    android:drawablePadding="5dp"
+                    android:layout_marginRight="20dp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10dp"
+                    android:textColor="@color/gray"
+                    android:text="1 serving"
+                    android:drawableLeft="@drawable/ic_serving"
+                    android:drawablePadding="5dp">
+
+                </TextView>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/favorite_liked_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_unlike"
+        android:layout_alignParentEnd="true">
+
+    </ImageView>
+
+
+</RelativeLayout>

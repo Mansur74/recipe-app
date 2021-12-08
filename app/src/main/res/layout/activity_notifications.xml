@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp">
+
+    <include layout="@layout/toolbar"> </include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notificaitons"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_alignParentStart="true">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mark All As Read"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18dp"
+            android:layout_alignParentEnd="true">
+
+        </TextView>
+
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:layout_marginRight="20dp">
+
+            <EditText
+                android:layout_alignParentLeft="true"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="Search using keywords"
+                android:textSize="15dp"
+                android:textColorHint="@color/gray"
+                android:background="@drawable/rounded_searchbox"
+                android:drawableLeft="@drawable/ic_search"
+                android:paddingLeft="15dp"
+                android:drawablePadding="20dp">
+            </EditText>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_searchbox"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/filter"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_filter">
+
+            </ImageView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notifications_recyclerview">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
