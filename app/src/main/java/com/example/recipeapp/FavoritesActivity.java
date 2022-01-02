@@ -34,7 +34,7 @@ public class FavoritesActivity extends AppCompatActivity {
         favorites = new ArrayList<>();
         for(int i = 0; i < 10; i++)
         {
-            favorites.add(new FavoritesModel("Blueberry Muffins", "120 Calory", "Breakfast", 0, 0, 0, false));
+            favorites.add(new FavoritesModel("Blueberry Muffins", "120 Calory", "Breakfast", 0, "sdf", 0, 0, "http://192.168.43.166/android/v1"));
         }
 
         favoritesAdapter = new FavoritesAdapter(favorites, FavoritesActivity.this);

@@ -13,6 +13,7 @@
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/recipe_view_favorite_image"
             android:layout_width="300dp"
             android:layout_height="175dp"
             android:background="@drawable/buffle"
@@ -28,8 +29,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="20dp">
+            android:paddingTop="20dp"
+            android:paddingRight="20dp">
 
             <include layout="@layout/toolbar2"></include>
 
@@ -157,13 +158,14 @@
 
 
             </LinearLayout>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/white"
+                android:layout_marginTop="50dp"
                 android:text="Ingredients"
-                android:textSize="15dp"
-                android:layout_marginTop="50dp">
+                android:textColor="@color/white"
+                android:textSize="15dp">
 
             </TextView>
 

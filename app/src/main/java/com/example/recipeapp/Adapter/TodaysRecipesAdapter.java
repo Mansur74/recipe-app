@@ -13,11 +13,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.recipeapp.Models.FavoritesModel;
 import com.example.recipeapp.R;
 import com.example.recipeapp.RecipeViewAcitivity;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class TodaysRecipesAdapter extends RecyclerView.Adapter<TodaysRecipesAdapter.MyViewHolder> {
 
@@ -39,12 +43,14 @@ public class TodaysRecipesAdapter extends RecyclerView.Adapter<TodaysRecipesAdap
         TextView favorite_type;
         TextView favorite_name;
         TextView favorite_calory;
+        TextView favorite_time;
         RatingBar favorite_rate;
         RelativeLayout todays_card_layout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            favorite_time = itemView.findViewById(R.id.food_time);
             favorite_image = itemView.findViewById(R.id.food_image);
             favorite_liked_icon = itemView.findViewById(R.id.todays_liked_icon);
             favorite_type = itemView.findViewById(R.id.food_type);
@@ -68,13 +74,23 @@ public class TodaysRecipesAdapter extends RecyclerView.Adapter<TodaysRecipesAdap
         holder.favorite_type.setText(todaysRecipes.get(position).getFavorite_type());
         holder.favorite_calory.setText(todaysRecipes.get(position).getFavorite_calory());
         holder.favorite_rate.setRating(todaysRecipes.get(position).getFavorite_rate());
-        if(todaysRecipes.get(position).getIs_liked())
+        holder.favorite_time.setText(todaysRecipes.get(position).getDisplay_time());
+
+        String url = "http://192.168.43.166/android/images/" + todaysRecipes.get(position).getImage_dir();
+
+        Glide.with(context).load(url).into(holder.favorite_image);
+
+        if(todaysRecipes.get(position).getIs_liked() == 1)
             holder.favorite_liked_icon.setBackgroundResource(R.drawable.ic_like);
+        else
+            holder.favorite_liked_icon.setBackgroundResource(R.drawable.ic_unlike);;
+        int pos = position;
 
         holder.todays_card_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RecipeViewAcitivity.favorite_pos = position;
+                RecipeViewAcitivity.the_favorite = todaysRecipes.get(pos);
+                RecipeViewAcitivity.the_favorite_pos = pos;
                 Intent intent = new Intent(context, RecipeViewAcitivity.class);
                 context.startActivity(intent);
             }
@@ -86,6 +102,8 @@ public class TodaysRecipesAdapter extends RecyclerView.Adapter<TodaysRecipesAdap
     public int getItemCount() {
         return todaysRecipes.size();
     }
+
+
 
 
 }

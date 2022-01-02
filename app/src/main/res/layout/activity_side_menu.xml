@@ -165,10 +165,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/gray"
-                android:drawableLeft="@drawable/ic_sign_out"
+                android:drawableLeft="@drawable/ic_help"
                 android:text="Help">
             </TextView>
             <TextView
+                android:id="@+id/sign_out"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:padding="10dp"

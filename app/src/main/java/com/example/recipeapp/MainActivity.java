@@ -18,11 +18,19 @@ public class MainActivity extends AppCompatActivity {
         Button register_but = findViewById(R.id.register_button);
         TextView signIn_but = findViewById(R.id.sign_in);
 
+        if(SharedPreferencedManager.getInstance(this).isLoggedIn())
+        {
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
         register_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -32,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SignInActivity.class);
                 startActivity(intent);
+                finish();
 
             }
         });

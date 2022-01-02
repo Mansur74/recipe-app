@@ -2,18 +2,18 @@ package com.example.recipeapp.Models;
 
 public class FavoritesModel {
 
-    private String favorite_name, favorite_calory, favorite_type;
-    int favorite_rate, display_time, serving_num;
-    boolean liked;
+    private String favorite_name, favorite_calory, display_time, favorite_type, image_dir;
+    int favorite_rate, serving_num, is_liked;
 
-    public FavoritesModel(String favorite_name, String favorite_calory, String favorite_type, int favorite_rate, int dispay_time, int serving_num, boolean is_liked) {
+    public FavoritesModel(String favorite_name, String favorite_calory, String favorite_type, int favorite_rate, String dispay_time, int serving_num, int is_liked, String image_dir) {
         this.favorite_name = favorite_name;
         this.favorite_calory = favorite_calory;
         this.favorite_type = favorite_type;
         this.favorite_rate = favorite_rate;
         this.display_time = dispay_time;
         this.serving_num = serving_num;
-        this.liked = is_liked;
+        this.is_liked = is_liked;
+        this.image_dir = image_dir;
 
 
     }
@@ -22,7 +22,11 @@ public class FavoritesModel {
         return favorite_rate;
     }
 
-    public int getDisplay_time() {
+    public String getImage_dir() {
+        return image_dir;
+    }
+
+    public String getDisplay_time() {
         return display_time;
     }
 
@@ -30,8 +34,8 @@ public class FavoritesModel {
         return serving_num;
     }
 
-    public boolean getIs_liked() {
-        return liked;
+    public int getIs_liked() {
+        return is_liked;
     }
 
     public String getFavorite_type() {
@@ -54,6 +58,10 @@ public class FavoritesModel {
         this.favorite_type = favorite_type;
     }
 
+    public void setImage_dir(String image_dir) {
+        this.image_dir = image_dir;
+    }
+
     public void setFavorite_name(String favorite_name) {
         this.favorite_name = favorite_name;
     }
@@ -62,7 +70,7 @@ public class FavoritesModel {
         this.favorite_rate = favorite_rate;
     }
 
-    public void setDisplay_time(int display_time) {
+    public void setDisplay_time(String display_time) {
         this.display_time = display_time;
     }
 
@@ -70,7 +78,7 @@ public class FavoritesModel {
         this.serving_num = serving_num;
     }
 
-    public void setIs_liked(boolean is_liked) {
-        this.liked = is_liked;
+    public void setIs_liked(int is_liked) {
+        this.is_liked = is_liked;
     }
 }

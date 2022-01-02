@@ -27,6 +27,7 @@ public class SideMenuActivity extends AppCompatActivity {
         TextView settings_but = findViewById(R.id.settings);
         TextView home_but = findViewById(R.id.home);
         TextView favorites_but = findViewById(R.id.favorites);
+        TextView signOut_but = findViewById(R.id.sign_out);
 
         for (Drawable drawable : home_but.getCompoundDrawables()) {
             home_but.setTextColor(getResources().getColor(R.color.gray));
@@ -50,6 +51,11 @@ public class SideMenuActivity extends AppCompatActivity {
             change_drawable(settings_but);
         }
 
+        else if(menu_choice == 7)
+        {
+            change_drawable(signOut_but);
+        }
+
 
 
 
@@ -69,6 +75,7 @@ public class SideMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 change_drawable(home_but);
                 Intent intent = new Intent(SideMenuActivity.this, HomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
             }
@@ -79,6 +86,17 @@ public class SideMenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 change_drawable(favorites_but);
                 Intent intent = new Intent(SideMenuActivity.this, FavoritesActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        signOut_but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferencedManager.getInstance(SideMenuActivity.this).userLogout();
+                change_drawable(signOut_but);
+                Intent intent = new Intent(SideMenuActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }

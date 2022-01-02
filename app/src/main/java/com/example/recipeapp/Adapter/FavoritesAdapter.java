@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyViewHolder> {
 
-    ArrayList<FavoritesModel> favorites;
+    public static ArrayList<FavoritesModel> favorites;
     Context context;
 
     public FavoritesAdapter(ArrayList<FavoritesModel> favorites , Context context)
@@ -74,10 +74,16 @@ public class FavoritesAdapter extends RecyclerView.Adapter<FavoritesAdapter.MyVi
         holder.favorite_type.setText(favorites.get(position).getFavorite_type());
         holder.favorite_calory.setText(favorites.get(position).getFavorite_calory());
         holder.favorite_rate.setRating(favorites.get(position).getFavorite_rate());
+        if(favorites.get(position).getIs_liked() == 1)
+            holder.favorite_liked_icon.setBackgroundResource(R.drawable.ic_like);
+        else
+            holder.favorite_liked_icon.setBackgroundResource(R.drawable.ic_unlike);;
 
+        int pos = position;
         holder.favorite_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                RecipeViewAcitivity.the_favorite = favorites.get(pos);
                 Intent intent = new Intent(context, RecipeViewAcitivity.class);
                 context.startActivity(intent);
             }

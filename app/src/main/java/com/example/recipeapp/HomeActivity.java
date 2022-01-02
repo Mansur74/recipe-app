@@ -1,6 +1,7 @@
 package com.example.recipeapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,18 +15,33 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.example.recipeapp.Adapter.FavoritesAdapter;
 import com.example.recipeapp.Adapter.TodaysRecipesAdapter;
 import com.example.recipeapp.Models.FavoritesModel;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity {
 
     public static TodaysRecipesAdapter todaysRecipesAdapter;
-    FavoritesAdapter recommendedAdapter;
+    public static FavoritesAdapter recommendedAdapter;
 
     RecyclerView recommendedRecyclerView;
     RecyclerView todaysRecyclerView;
@@ -80,6 +96,8 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
+
+
         side_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,11 +138,48 @@ public class HomeActivity extends AppCompatActivity {
         todays_recipes = new ArrayList<>();
         recommended_recipes = new ArrayList<>();
 
-        for(int i = 0; i < 5; i++)
-        {
-            todays_recipes.add(new FavoritesModel("Blueberry Muffins", "120 Calory", "Breakfast", 3, 15, 2, true));
-            recommended_recipes.add(new FavoritesModel("Blueberry Muffins", "120 Calory", "Breakfast",3 ,15,1, false));
-        }
+
+        StringRequest request = new StringRequest(Request.Method.POST, Constants.get_recipes_URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+                try
+                {
+                    JSONArray json_array = new JSONArray(response);
+                    for(int i = 0; i < json_array.length(); i++)
+                    {
+                        String name = json_array.getJSONObject(i).getString("name");
+                        String calory = json_array.getJSONObject(i).getString("calory");
+                        String type = json_array.getJSONObject(i).getString("type");
+                        int favorite_rate = json_array.getJSONObject(i).getInt("rate");
+                        String display_time = json_array.getJSONObject(i).getString("time");
+                        int serving_num = json_array.getJSONObject(i).getInt("serving_num");
+                        int is_liked = json_array.getJSONObject(i).getInt("is_liked");
+                        String image_dir = json_array.getJSONObject(i).getString("image_dir");
+
+
+
+                        todays_recipes.add(new FavoritesModel(name, calory, type, favorite_rate, display_time, serving_num, is_liked, image_dir));
+                        recommended_recipes.add(new FavoritesModel(name, calory, type, favorite_rate, display_time, serving_num, is_liked, image_dir));
+
+                        todaysRecipesAdapter.notifyDataSetChanged();
+                        recommendedAdapter.notifyDataSetChanged();
+
+                    }
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+        MySingleton.getInstance(this).addToRequestQueue(request);
 
 
         this.todaysRecipesAdapter = new TodaysRecipesAdapter(todays_recipes, HomeActivity.this);
@@ -135,6 +190,8 @@ public class HomeActivity extends AppCompatActivity {
         this.recommendedRecyclerView.setAdapter(recommendedAdapter);
         this.recommendedRecyclerView.setLayoutManager(new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.VERTICAL, false));
 
+        todaysRecipesAdapter.notifyDataSetChanged();
+        recommendedAdapter.notifyDataSetChanged();
 
 
     }
