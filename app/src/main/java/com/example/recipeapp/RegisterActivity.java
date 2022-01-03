@@ -75,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), json_object.getString("message"), Toast.LENGTH_LONG).show();
                     if(json_object.getBoolean("error") == false)
                     {
-                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                        Intent intent = new Intent(RegisterActivity.this, SignInActivity.class);
                         startActivity(intent);
                         finish();
                     }

@@ -70,7 +70,7 @@ public class SignInActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), json_object.getString("message"), Toast.LENGTH_LONG).show();
                     if(!json_object.getBoolean("error"))
                     {
-                        SharedPreferencedManager.getInstance(SignInActivity.this).user_login(json_object.getInt("ID"), json_object.getString("username"), json_object.getString("email"));
+                        SharedPreferencedManager.getInstance(SignInActivity.this).user_login(json_object.getInt("ID"), json_object.getString("username"), json_object.getString("email"), json_object.getString("image_dir"));
                         Intent intent = new Intent(SignInActivity.this, HomeActivity.class);
                         startActivity(intent);
                         finish();

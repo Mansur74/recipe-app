@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import org.w3c.dom.Text;
@@ -28,6 +29,14 @@ public class SideMenuActivity extends AppCompatActivity {
         TextView home_but = findViewById(R.id.home);
         TextView favorites_but = findViewById(R.id.favorites);
         TextView signOut_but = findViewById(R.id.sign_out);
+        TextView user_name = findViewById(R.id.user_name_textView);
+        ImageView profile_img = findViewById(R.id.profile_img);
+
+        user_name.setText(SharedPreferencedManager.getInstance(SideMenuActivity.this).getUserName());
+
+
+        String url = "http://192.168.3.57/android/images/" + SharedPreferencedManager.getInstance(this).getUserProfileImg();
+        Glide.with(this).load(url).into(profile_img);
 
         for (Drawable drawable : home_but.getCompoundDrawables()) {
             home_but.setTextColor(getResources().getColor(R.color.gray));

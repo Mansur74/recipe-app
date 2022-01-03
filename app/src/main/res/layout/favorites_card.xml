@@ -18,7 +18,7 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/favorite_image"
+            android:id="@+id/favorite_recipe_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/favorite_food"

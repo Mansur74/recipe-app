@@ -32,6 +32,7 @@
             android:layout_marginRight="20dp">
 
             <EditText
+                android:id="@+id/favorites_searchBox"
                 android:layout_alignParentLeft="true"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"

@@ -25,7 +25,7 @@ import java.util.Date;
 
 public class TodaysRecipesAdapter extends RecyclerView.Adapter<TodaysRecipesAdapter.MyViewHolder> {
 
-    public static ArrayList<FavoritesModel> todaysRecipes;
+    ArrayList<FavoritesModel> todaysRecipes;
     Context context;
 
 
@@ -76,9 +76,9 @@ public class TodaysRecipesAdapter extends RecyclerView.Adapter<TodaysRecipesAdap
         holder.favorite_rate.setRating(todaysRecipes.get(position).getFavorite_rate());
         holder.favorite_time.setText(todaysRecipes.get(position).getDisplay_time());
 
-        String url = "http://192.168.43.166/android/images/" + todaysRecipes.get(position).getImage_dir();
+        String url = "http://192.168.3.57/android/images/" + todaysRecipes.get(position).getImage_dir();
 
-        Glide.with(context).load(url).into(holder.favorite_image);
+        Glide.with(holder.favorite_image.getContext()).load(url).into(holder.favorite_image);
 
         if(todaysRecipes.get(position).getIs_liked() == 1)
             holder.favorite_liked_icon.setBackgroundResource(R.drawable.ic_like);
@@ -89,8 +89,9 @@ public class TodaysRecipesAdapter extends RecyclerView.Adapter<TodaysRecipesAdap
         holder.todays_card_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RecipeViewAcitivity.the_favorite = todaysRecipes.get(pos);
-                RecipeViewAcitivity.the_favorite_pos = pos;
+                RecipeViewAcitivity.the_favorites = todaysRecipes;
+                RecipeViewAcitivity.pos = pos;
+                RecipeViewAcitivity.activityName = "TodaysRecipes";
                 Intent intent = new Intent(context, RecipeViewAcitivity.class);
                 context.startActivity(intent);
             }
@@ -101,6 +102,12 @@ public class TodaysRecipesAdapter extends RecyclerView.Adapter<TodaysRecipesAdap
     @Override
     public int getItemCount() {
         return todaysRecipes.size();
+    }
+
+    public void filterList(ArrayList<FavoritesModel> filterArrayList)
+    {
+        todaysRecipes = filterArrayList;
+        notifyDataSetChanged();
     }
 
 

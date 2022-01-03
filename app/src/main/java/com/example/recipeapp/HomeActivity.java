@@ -10,11 +10,15 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -36,6 +40,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity {
@@ -43,14 +48,13 @@ public class HomeActivity extends AppCompatActivity {
     public static TodaysRecipesAdapter todaysRecipesAdapter;
     public static FavoritesAdapter recommendedAdapter;
 
-    RecyclerView recommendedRecyclerView;
-    RecyclerView todaysRecyclerView;
+    public static RecyclerView recommendedRecyclerView;
+    public static RecyclerView todaysRecyclerView;
 
-    ArrayList<FavoritesModel> todays_recipes;
-    ArrayList<FavoritesModel> recommended_recipes;
+    public static ArrayList<FavoritesModel> todays_recipes;
+    public static ArrayList<FavoritesModel> recommended_recipes;
 
     BottomSheetBehavior bottomSheetBehavior;
-
 
 
     @Override
@@ -64,6 +68,8 @@ public class HomeActivity extends AppCompatActivity {
         ImageView side_but = findViewById(R.id.side_menu);
         ImageView notifications_but = findViewById(R.id.notifications);
         ImageView filter_but = findViewById(R.id.filter);
+        EditText searchBox = findViewById(R.id.home_searchBox);
+        TextView helloText = findViewById(R.id.hello_text);
 
 
 
@@ -77,6 +83,8 @@ public class HomeActivity extends AppCompatActivity {
         }
 
          */
+
+        helloText.setText("Hello " + SharedPreferencedManager.getInstance(this).getUserName());
 
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetLayout);
         bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
@@ -95,8 +103,22 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        searchBox.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
 
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                filter(s.toString());
+            }
+        });
 
         side_but.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -177,7 +199,16 @@ public class HomeActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
             }
-        });
+        })
+        {
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                HashMap<String, String> map = new HashMap<>();
+                map.put("user_name", SharedPreferencedManager.getInstance(HomeActivity.this).getUserName());
+                return map;
+            }
+        };
 
         MySingleton.getInstance(this).addToRequestQueue(request);
 
@@ -193,6 +224,30 @@ public class HomeActivity extends AppCompatActivity {
         todaysRecipesAdapter.notifyDataSetChanged();
         recommendedAdapter.notifyDataSetChanged();
 
+
+    }
+
+    void filter(String text)
+    {
+        ArrayList<FavoritesModel> filterArrayList = new ArrayList<>();
+        for(FavoritesModel recipe : this.todays_recipes)
+        {
+            if(recipe.getFavorite_name().toLowerCase().contains(text.toLowerCase()))
+            {
+                filterArrayList.add(recipe);
+            }
+        }
+        todaysRecipesAdapter.filterList(filterArrayList);
+
+        filterArrayList = new ArrayList<>();
+        for(FavoritesModel recipe : this.recommended_recipes)
+        {
+            if(recipe.getFavorite_name().toLowerCase().contains(text.toLowerCase()))
+            {
+                filterArrayList.add(recipe);
+            }
+        }
+        recommendedAdapter.filterList(filterArrayList);
 
     }
 
